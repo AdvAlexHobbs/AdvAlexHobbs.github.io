@@ -160,7 +160,7 @@ function thankcustomer_close () {
 
 function updatetext_suspendcaseevent () {
 
-    let printtext = "Suspending while with DevelopmentTeam";
+    let printtext = "Suspending while with Development Team";
 
   navigator.clipboard.writeText(printtext);
 
