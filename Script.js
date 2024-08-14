@@ -56,6 +56,13 @@ document.getElementById('thankcustomerclosebutton').addEventListener('click', fu
     showToast("Text Copied to Clipboard","Helper",4000);
 });
 
+document.getElementById('requestcsatbutton').addEventListener('click', function (e){
+    
+    updatetext_requestcsat();
+    e.preventDefault();
+    showToast("Text Copied to Clipboard","Helper",4000);
+});
+
 // gets the input field and adds event when data is entered
 document.getElementById('NewInput').addEventListener('keyup', function (current){
 
@@ -157,6 +164,14 @@ function thankcustomer_close () {
 
 }
 
+
+function updatetext_requestcsat () {
+
+    let printtext = "You will receive a request for a short Customer Satisfaction Survey via email shortly, we would appreciate you filling this out to tell us about your experience with us and how we helped with this issue.";
+
+  navigator.clipboard.writeText(printtext);
+
+}
 
 function updatetext_suspendcaseevent () {
 
