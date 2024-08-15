@@ -134,7 +134,7 @@ function thankcustomer_close () {
         hob_daytext = ("Good Afternoon, ")
     };
 
-    const hob_array1 = ["thanks ", "\n\nMany thanks ", "\n\nThank you "];
+    const hob_array1 = ["\n\nthanks ", "\n\nMany thanks ", "\n\nThank you "];
 
     const hob_sel1 = Math.floor(Math.random() * hob_array1.length);
 
