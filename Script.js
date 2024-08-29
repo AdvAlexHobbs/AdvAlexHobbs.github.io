@@ -1,4 +1,11 @@
+//Todo: text box with a copy that doesn't wipe it, have it be multi line if possible
 
+document.getElementById('copytextbutton').addEventListener('click', function (e){
+    
+    copytextfunc();
+    e.preventDefault();
+    showToast("Text Copied to Clipboard","Helper",4000);
+});
 
 document.getElementById('Activedevbutton').addEventListener('click', function (e){
     
@@ -248,6 +255,33 @@ function updatetext_sevendaywarning () {
 
 
 
+
+
+function copytextfunc () {
+
+    
+    let target = document.getElementById('targettext2');
+    let usertext = document.getElementById('copytext');
+    console.log (usertext.value);
+
+
+    //testing clipboard copy
+
+    usertext.select();
+    usertext.setSelectionRange(0, 99999); // For mobile devices
+
+
+
+    
+  navigator.clipboard.writeText(usertext.value);
+
+
+    //wipe the field
+    //usertext.value = '';
+
+    //focusses on the text field again
+  //  usertext.focus();
+}
 
 
 function updatetext_active () {
