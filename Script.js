@@ -35,6 +35,13 @@ document.getElementById('pidwarningbutton').addEventListener('click', function (
     showToast("Text Copied to Clipboard","Helper",4000);
 });
 
+document.getElementById('slownessfrcbutton').addEventListener('click', function (e){
+    
+    updatetext_frcslownesscaseevent();
+    e.preventDefault();
+    showToast("Text Copied to Clipboard","Helper",4000);
+});
+
 document.getElementById('sevendaywarningbutton').addEventListener('click', function (e){
     
     updatetext_sevendaywarning();
@@ -187,6 +194,52 @@ function updatetext_suspendcaseevent () {
   navigator.clipboard.writeText(printtext);
 
 }
+function updatetext_frcslownesscaseevent () {
+
+    let hob_daytext = "Good Morning, ";
+
+    var today = new Date();
+    var curHr = today.getHours();
+
+    if (curHr < 12) {
+        hob_daytext = ("Good Morning, ")
+    } else {
+        hob_daytext = ("Good Afternoon, ")
+    };
+
+    let printtext = hob_daytext;
+
+    
+    const hob_array1 = ["Thank you for bringing this to our attention,", "Please accept our apologies for the inconvenience,", "Thank you for raising this with us,"];
+
+    const hob_sel1 = Math.floor(Math.random() * hob_array1.length);
+
+    printtext = printtext + "\n\n" + (hob_sel1, hob_array1[hob_sel1]);
+
+    
+    const hob_array2 = [" we are commencing investigation now ", " we are looking into this "];
+
+    const hob_sel2 = Math.floor(Math.random() * hob_array2.length);
+
+    printtext = printtext + (hob_sel2, hob_array2[hob_sel2]);
+
+    
+    const hob_array3 = ["and will be in touch ", "and will provide updates ", "and will report back "];
+
+    const hob_sel3 = Math.floor(Math.random() * hob_array3.length);
+
+    printtext = printtext + (hob_sel3, hob_array3[hob_sel3]);
+
+    
+    const hob_array4 = ["when further information becomes available.", "as this progresses."];
+
+    const hob_sel4 = Math.floor(Math.random() * hob_array2.length);
+
+    printtext = printtext + (hob_sel4, hob_array4[hob_sel4]);
+
+  navigator.clipboard.writeText(printtext);
+
+}
 
 
 function pidwarningbutton () {
@@ -203,7 +256,7 @@ function pidwarningbutton () {
         hob_daytext = ("Good Afternoon, ")
     };
 
-    let printtext = hob_daytext + "\n\nUnfortunately, the content of your description contravenes our local policy regarding the handling of patient identifiable information and as such we are required to delete it from our systems. Please can I ask that you edit your description with any identifiable information either obfuscated or removed.\n\nIf you have any questions regarding our local data protection policy, please email our clinical governance team at AHCClinicalTeam@oneadvanced.com, who will be more than happy to assist.\n\nFor the avoidance of doubt, we cannot accept a patient's name, date of birth, addresses, or gender. We are only allowed to accept NHS numbers, case ID's and person IDs.";
+    let printtext = hob_daytext + "\n\nUnfortunately, the content of your case contravenes our local policy regarding the handling of patient identifiable information and as such we are required to delete it from our systems. Please can I ask that you edit your case with any identifiable information either obfuscated or removed.\n\nIf you have any questions regarding our local data protection policy, please email our clinical governance team at AHCClinicalTeam@oneadvanced.com, who will be more than happy to assist.\n\nFor the avoidance of doubt, we cannot accept a patient's name, date of birth, addresses, or gender. We are only allowed to accept NHS numbers, case ID's and person IDs.";
 
 
   navigator.clipboard.writeText(printtext);
