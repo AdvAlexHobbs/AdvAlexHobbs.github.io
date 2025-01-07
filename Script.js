@@ -77,6 +77,13 @@ document.getElementById('requestcsatbutton').addEventListener('click', function 
     showToast("Text Copied to Clipboard","Helper",4000);
 });
 
+document.getElementById('salesforcesnowbutton').addEventListener('click', function (e){
+    
+    updatetext_servicenow();
+    e.preventDefault();
+    showToast("Text Copied to Clipboard","Helper",4000);
+});
+
 // gets the input field and adds event when data is entered
 document.getElementById('NewInput').addEventListener('keyup', function (current){
 
@@ -178,6 +185,13 @@ function thankcustomer_close () {
 
 }
 
+function updatetext_servicenow () {
+
+    let printtext = "Good Morning,\n\nWe have a new Support Portal that we are now using to action new cases that are raised, we would ask that this be raised there.\n\nIf you have any issues with logging into the new portal, the email to contact for this would be portalsupport@oneadvanced.com\n\nIn case you don't have the URL for the new portal, that is:\n\nhttps://services.oneadvanced.com/hub\n\n\n\nCommunications have been sent using emails taken from active accounts on the old portal. Please make sure you check you junk email folder to make sure you have not missed out on these";
+
+  navigator.clipboard.writeText(printtext);
+
+}
 
 function updatetext_requestcsat () {
 
@@ -217,7 +231,7 @@ function updatetext_frcslownesscaseevent () {
     printtext = printtext + "\n\n" + (hob_sel1, hob_array1[hob_sel1]);
 
     
-    const hob_array2 = [" we are commencing investigation now ", " we are looking into this "];
+    const hob_array2 = [" we are commencing investigation now ", " we are looking into this ", " we are looking into this "];
 
     const hob_sel2 = Math.floor(Math.random() * hob_array2.length);
 
